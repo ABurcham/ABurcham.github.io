@@ -6,25 +6,59 @@
     <link rel="stylesheet" type="text/css" href="./Resources/CSS/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./Resources/CSS/style.css">
+    <script type="text/javascript" src="Resources/js/main.js"></script>
   </head>
   <body>
+  <!--Header Section-->
     <div class="container-fluid">
       <div class="row header">
-        <h1 class="col-md-5 col-xs-3 col-xs-offset-1">Apollos Burcham</h1>
+        <h1 class="col-md-4 col-xs-3 col-xs-offset-1">Apollos Burcham</h1>
         <ul>
-          <li class="col-xs-1"><a href="#About">About</a></li>
-          <li class="col-xs-1"><a href="#Languages">Languages</a></li>
-          <li class="col-xs-1"><a href="#Projects">Projects</a></li>
-          <li class="col-xs-1"><a href="#Contact">Contact</a></li>
-          <li class="col-xs-1"><a href="#Github">Github</a></li>
+          <li class="col-xs-1 btn"><a href="#about">About</a></li>
+          <li class="col-xs-2 btn"><a src="#languages">Languages</a></li>
+          <li class="col-xs-1 btn"><a src="#projects">Projects</a></li>
+          <li class="col-xs-1 btn"><a src="#contact">Contact</a></li>
+          <li class="col-xs-1 btn"><a src="#github">Github</a></li>
         </ul>
       </div>
     </div>
-    <div class="jumbotron jumbotron-fluid">
-    <div class="container-fluid welcome">
-      <h1>Welcome to my Portfolio Site</h1>
-      <h2>Web Development, Front End, UX, & UI</h2>
-    </div>
+  <!--Loading Section
+    <div class="loader">
+      <svg version="1.1" id="L3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+    <circle fill="none" stroke="#fff" stroke-width="4" cx="50" cy="50" r="44" style="opacity:0.8;"/>
+      <circle fill="#fff" stroke="white" stroke-width="3" cx="15" cy="54" r="8" >
+        <animateTransform
+          attributeName="transform"
+          dur="2s"
+          type="rotate"
+          from="0 50 48"
+          to="360 50 52"
+          repeatCount="indefinite" /> -->
+
+      </circle>
+    </svg>
   </div>
+  <!--Jumbotron Section-->
+  <div class="jumbotron jumbotron-fluid jumbotron-main" id="jumbotron-1" style="position: relative;">
+        <div class="container col-xs-12">
+        <h1 class="display-3">Welcome to My Portfolio</h1>
+        <p>Front End Web Development & Design</p>
+      </div>
+      <div class="scroll-container col-xs-12">
+        <div id="section05" class="demo">
+          <a href="#about"><span></span>Scroll</a>
+        </div>
+      </div>
+    </div>
+ <!--About Section-->
+    <div id="about" class="container">
+      <div class="row">
+       <h2 class="col-xs-12 col-md-6"></h2>
+       <div class="col-xs-12 col-md-6">
+          <p class="left-col"></p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
