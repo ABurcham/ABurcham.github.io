@@ -43,7 +43,7 @@ body{
   .mobile-nav{
     display: block;
     position:fixed;
-    z-index:3;
+    z-index:9;
   }
   .mobile-nav{
     margin-top: 2rem;
@@ -93,7 +93,7 @@ body{
     cursor: pointer;
 
     opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
+    z-index: 10; /* and place it over the hamburger */
 
     -webkit-touch-callout: none;
   }
@@ -109,7 +109,7 @@ body{
     background: black;
     border-radius: 3px;
 
-    z-index: 1;
+    z-index: 9;
 
     transform-origin: 4px 0px;
 
@@ -165,6 +165,7 @@ body{
     transform: translate(-100%, 0);
 
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    z-index: 8;
   }
 
   #menu li
@@ -194,6 +195,8 @@ body{
   overflow: hidden;
   text-align: center;
   padding-top: 0rem;
+  margin-bottom: 0;
+  z-index: 1;
 }
 .jumbotron .container{
   display: block;
@@ -224,12 +227,12 @@ body{
 .welcome{
   justify-content: center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 930px) {
   .jumbotron h1 {
     font-size: 5.7rem;
   }
   .jumbotron p{
-    font-size: 4rem;
+    font-size: 3.9rem;
   }
 }
 
@@ -301,8 +304,98 @@ body{
 }
 /* About Me Section*/
 #about{
-  height:100rem;
+  min-height:20rem;
+  max-height: 126rem;
+  padding: 7rem 2rem;
+  background-color: steelblue;
+  width: 100%;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
 }
-#about h2,p{
+#about .row{
+  margin-top: 3rem;
+}
+#about .image-container{
+  margin:0rem 0rem;
+  overflow: hidden;
+}
+#about h2, #about p{
   color: black;
+  text-align: right;
+  font-weight: bold;
+  letter-spacing: .3rem;
+}
+#about p{
+  padding:2rem 1rem;
+  transform: translate(0%, 50%);
+  font-weight: lighter;
+}
+#about img{
+  width:100%;
+  height: auto;
+}
+#about .about-txt{
+  font-family: "Monoton", sans-serif;
+}
+@media only screen and (max-width:600px){
+  #about p{
+    font-size: 1.5rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 25%);
+  }
+  #about h2{
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width:600px){
+  #about p{
+    font-size: 2rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 25%);
+  }
+  #about h2{
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width:900px){
+  #about p{
+    font-size: 3rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 30%);
+  }
+  #about h2{
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width:1200px){
+  #about p{
+    font-size: 4rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 35%);
+  }
+  #about h2{
+    font-size: 6rem;
+  }
+}
+@media only screen and (min-width:1500px){
+  #about p{
+    font-size: 5rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 50%);
+  }
+}
+@media only screen and (min-width:1500px){
+  #about p{
+    font-size: 5rem;
+    padding:0rem 1rem;
+    transform: translate(0%, 75%);
+  }
+  #about h2{
+    font-size: 9rem;
+    transform: translate(0%, 50%);
+  }
+  #about .about-txt{
+    padding-right: 5rem;
+  }
 }
