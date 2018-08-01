@@ -214,7 +214,7 @@ body {
   font-weight: lighter;
 }
 .jumbotron p {
-  max-width: 55rem;
+  max-width: 70rem;
   margin: auto;
   font-size: 4rem;
 }
@@ -499,6 +499,7 @@ background-image: url("../Images/JS-logo.png");
 }
 .project-head p{
   font-size: 2.5rem;
+  padding-bottom: 3rem;
 }
 .projects{
   padding:0;
@@ -516,7 +517,7 @@ background-image: url("../Images/JS-logo.png");
 .carousel{
   max-width:90%;
   margin:0 auto;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 @media only screen and (max-width:500px){
   .carousel{
@@ -525,4 +526,32 @@ background-image: url("../Images/JS-logo.png");
 }
 .slick-slide img{
   width:100%;
+}
+/*Contact Section*/
+.contact-section{
+  display: block;
+  background-size: cover;
+  margin-left: 15rem;
+}
+@media only screen and (max-width:990px){
+  .contact-section{
+    margin-left:2rem;
+    text-align: center;
+  }
+}
+.contact-section h2{
+  font-size: 5rem;
+  padding: 3rem 0rem;
+}
+.contact-section .fab, .contact-section .fas{
+  font-size: 10rem;
+  color: rgb(115,157,206);
+  padding-bottom: 4rem;
+}
+.contact-section p{
+  font-size: 2.8rem;
+}
+#contact, #github{
+  margin: auto;
+  padding: 5rem 0rem;
 }
