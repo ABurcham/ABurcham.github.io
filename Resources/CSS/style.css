@@ -550,6 +550,7 @@ background-image: url("../Images/JS-logo.png");
 }
 .contact-section p{
   font-size: 2.8rem;
+  text-decoration: none;
 }
 #contact, #github{
   margin: auto;
