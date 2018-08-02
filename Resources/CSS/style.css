@@ -335,6 +335,7 @@ body {
 #about img{
   width:100%;
   height: auto;
+  border-radius: 1rem;
 }
 #about .about-txt{
   font-family: "Raleway", sans-serif;
