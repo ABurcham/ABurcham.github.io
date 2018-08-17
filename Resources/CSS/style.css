@@ -4,7 +4,9 @@ html{
 body {
   font-family: "Raleway", sans-serif;
 }
-
+.col-xs-12{
+  z-index: 0;
+}
 /*Loading Screen Section
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700,300);
 
@@ -41,148 +43,207 @@ body {
 */
 
 /*Hamburger Menu*/
-  .mobile-nav{
-    display: block;
-    position:fixed;
-    z-index:9;
-  }
-  .mobile-nav{
-    margin-top: 2rem;
-    padding: 0;
+header{
+  position: fixed;
+  z-index: 5;
+}
+#main-menu{
+  background-color:white;
+  margin-bottom: 5rem;
+  position: fixed;
+  z-index: 6;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+/* Screen reader only */
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0,0,0,0);
+border: 0;
+}
 
-    /* make it look decent enough */
-    color: #cdcdcd;
-    font-family: "Avenir Next", "Avenir", sans-serif;
-  }
+/* Button styling */
+.menu-toggle {
+display: inline-block;
+padding: .75em 15px;
+line-height: 1em;
+font-size: 2em;
+color: #333;
+}
 
-  .mobile-nav a{
-    text-decoration: none;
-    color: #232323;
+.menu-toggle:hover,
+.menu-toggle:focus {
+color: lightgrey;
+}
 
-    transition: font-weight 0.3s ease;
-  }
+/*
+Default styles + Mobile first
+Offscreen menu style
+*/
+.main-menu {
+position: absolute;
+left: -220px;
+top: 0;
+height: 100%;
+overflow-x: visible;
+transition: left 0.3s ease,
+            box-shadow 0.3s ease;
+z-index: 999;
+}
+.main-menu img{
+  visibility: hidden;
+}
+.main-menu ul {
+list-style: none;
+position: absolute;
+margin: 0;
+padding: 2.5em 0 0;
+/* Hide shadow w/ -8px while 'closed' */
+-webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+   -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+        box-shadow: -8px 0 8px rgba(0,0,0,.5);
+width: 200px;
 
-  .mobile-nav a:hover{
-    font-weight: bolder;
-  }
-  .mobile-nav h3{
-    font-weight:600;
-    font-size: 6rem;
-    letter-spacing: .02rem;
-    color: steelblue;
-  }
-  #menuToggle{
-    display: block;
-    position: relative;
-    top: 50px;
-    left: 50px;
+z-index: 20;
+}
 
-    z-index: 1;
+.main-menu a {
+display: block;
+padding: .75em 2rem;
+line-height: 1rem;
+font-size: 2.5rem;
+color: #337ab7;
+text-decoration: none;
+background:none;
+}
 
-    -webkit-user-select: none;
-    user-select: none;
-  }
+.main-menu li:first-child a {
+border-top: 5px solid #383838;
+}
 
-  #menuToggle input{
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
+.main-menu a:hover,
+.main-menu a:focus {
+  background: lightgrey;
+  cursor: pointer;
+  transition: background .5s linear .1s;
+}
 
-    cursor: pointer;
+.main-menu .menu-close {
+position: absolute;
+right: 0;
+top: 0;
+}
 
-    opacity: 0; /* hide this */
-    z-index: 10; /* and place it over the hamburger */
+/*
+On small devices, allow it to toggle...
+*/
+/*
+:target for non-JavaScript
+aria-expanded="true/false" will be for JavaScript
+*/
+.main-menu:target,
+.main-menu[aria-expanded="true"] {
+left: 0;
+outline: none;
+-moz-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+-webkit-box-shadow: 3px 0 12px rgba(0,0,0,.25);
+box-shadow: 3px 0 12px rgba(0,0,0,.25);
+}
 
-    -webkit-touch-callout: none;
-  }
+.main-menu:target .menu-close,
+.main-menu[aria-expanded="true"] .menu-close {
+z-index: 1001;
+}
 
-  #menuToggle span
-  {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+position: relative;
+z-index: 1000;
+}
 
-    background: black;
-    border-radius: 3px;
+/*
+We could us `.main-menu:target:after`, but
+it wouldn't be clickable.
+*/
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop {
+position: absolute;
+display: block;
+content: "";
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+z-index: 5;
+opacity: .5;
+cursor: default;
+}
 
-    z-index: 9;
+@supports (position: fixed) {
+.main-menu,
+.main-menu:target + .backdrop,
+.main-menu[aria-expanded="true"] + .backdrop {
+  position: fixed;
+}
+}
 
-    transform-origin: 4px 0px;
-
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-  }
-
-  #menuToggle span:first-child
-  {
-    transform-origin: 0% 0%;
-  }
-
-  #menuToggle span:nth-last-child(2)
-  {
-    transform-origin: 0% 100%;
-  }
-
-  #menuToggle input:checked ~ span
-  {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: black;
-  }
-
-
-  #menuToggle input:checked ~ span:nth-last-child(3)
-  {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-
-
-  #menuToggle input:checked ~ span:nth-last-child(2)
-  {
-    transform: rotate(-45deg) translate(0, -1px);
-  }
-
-
-  #menu
-  {
-    position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
-
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    z-index: 8;
-  }
-
-  #menu li
-  {
-    padding: 10px 0;
-    font-size: 22px;
-  }
-
-
-  #menuToggle input:checked ~ ul
-  {
-    transform: none;
-  }
-  .desktop-nav{
+/*
+Larger screen styling
+Horizontal menu
+*/
+@media screen and (min-width: 768px) and (orientation:landscape) {
+  .menu-toggle,
+  .main-menu .menu-close {
     display: none;
   }
+  .main-menu img{
+    visibility: visible;
+    padding-left:2rem;
+    padding-right: 2rem;
+    padding-top:.5rem;
+  }
+  /* Undo positioning of off-canvas menu */
+  .main-menu {
+    position: fixed;
+    left: auto;
+    top: auto;
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 4;
+    opacity: .7;
+  }
+
+  .main-menu ul {
+    display: flex;
+
+    /* Undo off-canvas styling */
+    padding: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    height: auto;
+    width: auto;
+  }
+
+  .main-menu a {
+    border: 0 !important; /* Remove borders from off-canvas styling */
+  }
+
+  .main-menu a:hover,
+  .main-menu a:focus {
+    background: lightgrey; /* Remove background from off-canvas styling */
+    text-decoration: none;
+    color: black;
+    transition: background .5s linear .1s;
+  }
+}
+
 
 /* Jumbotron Section*/
 .jumbotron{
