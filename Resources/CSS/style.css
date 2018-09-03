@@ -395,6 +395,13 @@ Horizontal menu
   transform: translate(0%, 50%);
   font-weight: lighter;
 }
+#about a{
+  color: white;
+  text-align:center;
+  font-weight: bold;
+  letter-spacing: .3rem;
+  transform: translate(0%, 90%);
+}
 #about img{
   width:100%;
   height: auto;
@@ -427,7 +434,7 @@ Horizontal menu
   #about p{
     font-size: 3rem;
     padding:0rem 1rem;
-    transform: translate(0%, 30%);
+    transform: translate(0%, 15%);
   }
   #about h2{
     font-size: 4rem;
@@ -435,9 +442,9 @@ Horizontal menu
 }
 @media only screen and (min-width:1200px){
   #about p{
-    font-size: 4rem;
+    font-size: 3.5rem;
     padding:0rem 1rem;
-    transform: translate(0%, 35%);
+    transform: translate(0%, 25%);
   }
   #about h2{
     font-size: 6rem;
@@ -445,16 +452,16 @@ Horizontal menu
 }
 @media only screen and (min-width:1500px){
   #about p{
-    font-size: 5rem;
+    font-size: 4rem;
     padding:0rem 1rem;
-    transform: translate(0%, 50%);
+    transform: translate(0%, 30%);
   }
 }
 @media only screen and (min-width:1500px){
   #about p{
-    font-size: 5rem;
+    font-size: 4rem;
     padding:0rem 1rem;
-    transform: translate(0%, 75%);
+    transform: translate(0%, 45%);
   }
   #about h2{
     font-size: 9rem;
